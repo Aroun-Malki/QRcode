@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.explain {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.explain h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.explain .under {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    max-width: 800px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.left, .right {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.left {
+    border-right: 1px solid #ddd;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.generat {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.generat:hover {
+    background-color: #0056b3;
+}
+
+.right {
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left, .right {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input.error {
+    border-color: red;
+    animation: shake 0.3s ease-in-out;
+}
+
+.qr {
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #F4F4F4; /* Fond gris clair */
+    border: 2px dashed #A0A0A0;
+    border-radius: 10px;
+    min-height: 220px;
+}
+
+/* Icône de téléchargement */
+.download-icon {
+    position: absolute;
+    bottom: -18%; /* Position en bas du QR */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Coins arrondis mais plus carré */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.download-icon:hover {
+    background-color: #218838;
+}
+
+.qr:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.download-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+.scan-output {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#upload {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Conteneur principal bien centré */
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Champ texte du lien détecté */
+.qr-result {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#qrLink {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+/* Effet visuel après copie */
+#qrLink.copied {
+    background: #d4edda;
+    transition: background 0.3s;
+}
+
+/* Bouton copier */
+#copyBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+#copyBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Icône du bouton copier */
+#copyBtn .material-icons {
+    font-size: 20px;
+}
+
+/* Messages d'état */
+.success-message, .error-message {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Bouton personnalisé pour télécharger une image */
+#customUploadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#customUploadBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Icône Material Icons pour le bouton */
+#customUploadBtn .material-icons {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr-code</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="explain">
+        <h1 class="Text">Make your Qr-Code</h1>
+        <div class="under">Free  •  Easy  •  Fast</div>
+    </div>
+    <div class="container">
+        <div class="left">
+            <h2 class="text">Make a Qr from a link</h2>
+            <input type="text" id="link" placeholder="Enter your link">
+            <button class="generat" id="Gen">Generate</button>
+            <div class="qr" id="qr">
+                <span class="download-icon material-icons" id="download" style="display: none;">download</span>
+            </div>
+        </div>
+        <div class="right">
+            <h2 class="text">Scan a QR Code</h2>
+            <div id="output" class="scan-output"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="script.js"></script>
+    <script src="scanner.js"></script>
+</body>
+</html>
